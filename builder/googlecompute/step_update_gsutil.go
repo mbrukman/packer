@@ -28,7 +28,7 @@ func (s *StepUpdateGsutil) Run(state multistep.StateBag) multistep.StepAction {
 		sudoPrefix = "sudo "
 	}
 
-	gsutilUpdateCmd := "/usr/local/bin/gsutil update -n -f"
+	gsutilUpdateCmd := "/usr/local/bin/gsutil update -n -f -q"
 	cmd := new(packer.RemoteCmd)
 	cmd.Command = fmt.Sprintf("%s%s", sudoPrefix, gsutilUpdateCmd)
 
